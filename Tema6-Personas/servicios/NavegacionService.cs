@@ -7,16 +7,9 @@ namespace Tema6_Personas.servicios
     {
         private readonly UserControl uc;
 
-        public NavegacionService()
-        {
-            uc = new ListadoPersonas();
-        }
+        public NavegacionService() => uc = new ListadoPersonas();
 
-        public bool? AbrirDialogo()
-        {
-            NuevaNacionalidad dialogo = new NuevaNacionalidad();
-            return dialogo.ShowDialog();
-        }
+        public bool? AbrirDialogo() => new NuevaNacionalidad().ShowDialog();
 
         public UserControl AbrirUC(string nombreUC)
         {
