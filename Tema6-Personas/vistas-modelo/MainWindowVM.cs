@@ -27,14 +27,8 @@ namespace Tema6_Personas.vistas_modelo
             ListadoPersonasCommand = new RelayCommand(VerListadoPersonas);
         }
 
-        public void AñadirPersona()
-        {
-            ContenidoVentana = servicioNavegacion.AbrirUC("NUEVA PERSONA");
-        }
+        public void AñadirPersona() => ContenidoVentana = servicioNavegacion.AbrirUC("NUEVA PERSONA");
 
-        public void VerListadoPersonas()
-        {
-            ContenidoVentana = servicioNavegacion.AbrirUC("LISTADO PERSONAS");
-        }
+        public void VerListadoPersonas() => ContenidoVentana = servicioNavegacion.AbrirUC("LISTADO PERSONAS");
     }
 }

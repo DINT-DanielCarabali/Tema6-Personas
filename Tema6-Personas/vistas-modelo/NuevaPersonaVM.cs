@@ -36,10 +36,7 @@ namespace Tema6_Personas.vistas_modelo
             Nacionalidades = new ObservableCollection<string> { "Italiana", "Española", "Francesa" };
         }
 
-        public void AñadirNacionalidad()
-        {
-            servicioNavegacion.AbrirDialogo();
-        }
+        public void AñadirNacionalidad() => servicioNavegacion.AbrirDialogo();
 
         public void AñadirPersona()
         {
