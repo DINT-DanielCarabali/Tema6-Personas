@@ -17,9 +17,6 @@ namespace Tema6_Personas.vistas
             DataContext = vm;
         }
 
-        private void AceptarButton_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-        }
+        private void AceptarButton_Click(object sender, RoutedEventArgs e) => DialogResult = true;
     }
 }
