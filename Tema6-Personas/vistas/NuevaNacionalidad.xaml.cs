@@ -8,7 +8,7 @@ namespace Tema6_Personas.vistas
     /// </summary>
     public partial class NuevaNacionalidad : Window
     {
-        private NuevaNacionalidadVM vm;
+        private readonly NuevaNacionalidadVM vm;
 
         public NuevaNacionalidad()
         {

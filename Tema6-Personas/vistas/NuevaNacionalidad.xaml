@@ -19,10 +19,11 @@
     <DockPanel LastChildFill="False">
         <StackPanel DockPanel.Dock="Top">
             <TextBlock Margin="5,5,5,0">Nacionalidad</TextBlock>
-            <TextBox Text="{Binding Path=NacionalidadNueva}" Margin="5,0,5,5"/>
+            <TextBox Text="{Binding Path=NacionalidadNueva, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,5,5"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Right">
-            <Button x:Name="AceptarButton" IsDefault="True" Click="AceptarButton_Click">Aceptar</Button>
+            <Button x:Name="AceptarButton" Command="{Binding Path=AñadirNacionalidadCommand}" IsDefault="True"
+                    Click="AceptarButton_Click">Aceptar</Button>
             <Button IsCancel="True">Cancelar</Button>
         </StackPanel>
     </DockPanel>

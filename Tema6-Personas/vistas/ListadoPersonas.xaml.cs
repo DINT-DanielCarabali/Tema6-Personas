@@ -8,7 +8,7 @@ namespace Tema6_Personas.vistas
     /// </summary>
     public partial class ListadoPersonas : UserControl
     {
-        private ListadoPersonasVM vm;
+        private readonly ListadoPersonasVM vm;
 
         public ListadoPersonas()
         {

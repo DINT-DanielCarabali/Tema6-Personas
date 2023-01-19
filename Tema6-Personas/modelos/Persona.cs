@@ -2,7 +2,7 @@
 
 namespace Tema6_Personas.modelos
 {
-    class Persona : ObservableObject
+    public class Persona : ObservableObject
     {
         private string nombre;
         public string Nombre
@@ -25,9 +25,9 @@ namespace Tema6_Personas.modelos
             set => SetProperty(ref nacionalidad, value);
         }
 
-        public Persona() { }
+        public Persona(){}
 
-        public Persona(string nombre, int edad, string nacionalidad)
+        public Persona(string nombre, int? edad, string nacionalidad)
         {
             Nombre = nombre;
             Edad = edad;

@@ -86,12 +86,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="mensajes\NuevaNacionalidadValueChangedMessage.cs" />
+    <Compile Include="mensajes\NuevaPersonaValueChangedMessage.cs" />
+    <Compile Include="mensajes\PersonaActualRequestMessage.cs" />
     <Compile Include="modelos\Persona.cs" />
     <Compile Include="servicios\NavegacionService.cs" />
+    <Compile Include="vistas-modelo\ConsultaPersonaVM.cs" />
     <Compile Include="vistas-modelo\ListadoPersonasVM.cs" />
     <Compile Include="vistas-modelo\MainWindowVM.cs" />
     <Compile Include="vistas-modelo\NuevaNacionalidadVM.cs" />
     <Compile Include="vistas-modelo\NuevaPersonaVM.cs" />
+    <Compile Include="vistas\ConsultaPersona.xaml.cs">
+      <DependentUpon>ConsultaPersona.xaml</DependentUpon>
+    </Compile>
     <Compile Include="vistas\ListadoPersonas.xaml.cs">
       <DependentUpon>ListadoPersonas.xaml</DependentUpon>
     </Compile>
@@ -113,6 +120,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="vistas\ConsultaPersona.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="vistas\ListadoPersonas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

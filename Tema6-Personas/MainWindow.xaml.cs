@@ -8,7 +8,7 @@ namespace Tema6_Personas
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowVM vm;
+        private readonly MainWindowVM vm;
 
         public MainWindow()
         {

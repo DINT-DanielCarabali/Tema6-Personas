@@ -5,12 +5,13 @@ using Tema6_Personas.servicios;
 
 namespace Tema6_Personas.vistas_modelo
 {
-    class MainWindowVM : ObservableObject
+    public class MainWindowVM : ObservableObject
     {
         private readonly NavegacionService servicioNavegacion;
 
-        public RelayCommand NuevaPersonaCommand { get; }
-        public RelayCommand ListadoPersonasCommand { get; }
+        public RelayCommand AbrirUCNuevaPersonaCommand { get; }
+        public RelayCommand AbrirUCListadoPersonasCommand { get; }
+        public RelayCommand AbrirUCConsultaPersonaCommand { get; }
 
         private UserControl contenidoVentana;
         public UserControl ContenidoVentana
@@ -23,12 +24,15 @@ namespace Tema6_Personas.vistas_modelo
         {
             servicioNavegacion = new NavegacionService();
 
-            NuevaPersonaCommand = new RelayCommand(AñadirPersona);
-            ListadoPersonasCommand = new RelayCommand(VerListadoPersonas);
+            AbrirUCNuevaPersonaCommand = new RelayCommand(AbrirUCAñadirPersona);
+            AbrirUCListadoPersonasCommand = new RelayCommand(AbrirUCListadoPersonas);
+            AbrirUCConsultaPersonaCommand = new RelayCommand(AbrirUCConsultaPersona);
         }
 
-        public void AñadirPersona() => ContenidoVentana = servicioNavegacion.AbrirUC("NUEVA PERSONA");
+        public void AbrirUCAñadirPersona() => ContenidoVentana = servicioNavegacion.AbrirUC("NUEVA PERSONA");
 
-        public void VerListadoPersonas() => ContenidoVentana = servicioNavegacion.AbrirUC("LISTADO PERSONAS");
+        public void AbrirUCListadoPersonas() => ContenidoVentana = servicioNavegacion.AbrirUC("LISTADO PERSONAS");
+
+        public void AbrirUCConsultaPersona() => ContenidoVentana = servicioNavegacion.AbrirUC("CONSULTA PERSONA");
     }
 }

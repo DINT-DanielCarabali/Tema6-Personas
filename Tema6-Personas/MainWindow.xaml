@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Personas"
         Height="450" Width="800"
-        Icon="./assets/personas.ico">
+        Icon="./personas.ico">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Width" Value="150"/>
@@ -15,8 +15,9 @@
     </Window.Resources>
     <DockPanel>
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
-            <Button Command="{Binding Path=NuevaPersonaCommand}" Margin="10,10,5,5">Nueva persona</Button>
-            <Button Command="{Binding Path=ListadoPersonasCommand}" Margin="5,10,10,5">Listado de personas</Button>
+            <Button Command="{Binding Path=AbrirUCNuevaPersonaCommand}" Margin="10,10,5,5">Nueva persona</Button>
+            <Button Command="{Binding Path=AbrirUCListadoPersonasCommand}" Margin="5,10,5,5">Listado de personas</Button>
+            <Button Command="{Binding Path=AbrirUCConsultaPersonaCommand}" Margin="5,10,10,5">Consulta persona</Button>
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="2" Margin="10,5,10,10">
             <ContentControl Content="{Binding Path=ContenidoVentana}"/>

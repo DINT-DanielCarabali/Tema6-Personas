@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Tema6_Personas.vistas.NuevaPersona"
+﻿<UserControl x:Class="Tema6_Personas.vistas.ConsultaPersona"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -17,20 +17,15 @@
     <DockPanel LastChildFill="False">
         <StackPanel DockPanel.Dock="Top">
             <TextBlock>Nombre</TextBlock>
-            <TextBox Text="{Binding Path=NombreNuevo}"/>
+            <TextBox Text="{Binding Path=PersonaActual.Nombre}" IsReadOnly="True"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top">
             <TextBlock>Edad</TextBlock>
-            <TextBox Text="{Binding Path=EdadNueva}"/>
+            <TextBox Text="{Binding Path=PersonaActual.Edad}" IsReadOnly="True"/>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top">
             <TextBlock>Nacionalidad</TextBlock>
-            <StackPanel Orientation="Horizontal" Margin="5,0,5,5" HorizontalAlignment="Left">
-                <ComboBox ItemsSource="{Binding Path=Nacionalidades}" SelectedItem="{Binding Path=NacionalidadSeleccionada}"
-                          Width="100" Margin="0,5,5,5"/>
-                <Button Command="{Binding Path=NuevaNacionalidadCommand}" Margin="5" Width="20">+</Button>
-            </StackPanel>
+            <TextBox Text="{Binding Path=PersonaActual.Nacionalidad}" IsReadOnly="True"/>
         </StackPanel>
-        <Button Command="{Binding Path=AñadirPersonaCommand}" DockPanel.Dock="Top" Width="150">Aceptar</Button>
     </DockPanel>
 </UserControl>

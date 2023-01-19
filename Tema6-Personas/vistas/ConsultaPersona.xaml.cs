@@ -4,16 +4,16 @@ using Tema6_Personas.vistas_modelo;
 namespace Tema6_Personas.vistas
 {
     /// <summary>
-    /// Lógica de interacción para NuevaPersona.xaml
+    /// Lógica de interacción para ConsultaPersona.xaml
     /// </summary>
-    public partial class NuevaPersona : UserControl
+    public partial class ConsultaPersona : UserControl
     {
-        private readonly NuevaPersonaVM vm;
+        private readonly ConsultaPersonaVM vm;
 
-        public NuevaPersona()
+        public ConsultaPersona()
         {
             InitializeComponent();
-            vm = new NuevaPersonaVM();
+            vm = new ConsultaPersonaVM();
             DataContext = vm;
         }
     }
