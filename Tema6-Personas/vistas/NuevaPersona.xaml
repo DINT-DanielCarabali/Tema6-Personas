@@ -4,31 +4,41 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Tema6_Personas.vistas"
+             xmlns:inputLayout="clr-namespace:Syncfusion.UI.Xaml.TextInputLayout;assembly=Syncfusion.SfTextInputLayout.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="Margin" Value="5,5,5,0"/>
-        </Style>
-        <Style TargetType="TextBox">
+        <Style TargetType="inputLayout:SfTextInputLayout">
             <Setter Property="Margin" Value="5,0,5,5"/>
         </Style>
     </UserControl.Resources>
     <DockPanel LastChildFill="False">
         <StackPanel DockPanel.Dock="Top">
-            <TextBlock>Nombre</TextBlock>
-            <TextBox Text="{Binding Path=NombreNuevo}"/>
+            <inputLayout:SfTextInputLayout Hint="Nombre" HelperText="Nombre de la persona">
+                <TextBox Text="{Binding Path=NombreNuevo}"/>
+                <inputLayout:SfTextInputLayout.LeadingView>
+                    <Image Source="../assets/person.png"/>
+                </inputLayout:SfTextInputLayout.LeadingView>
+            </inputLayout:SfTextInputLayout>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top">
-            <TextBlock>Edad</TextBlock>
-            <TextBox Text="{Binding Path=EdadNueva}"/>
+            <inputLayout:SfTextInputLayout Hint="Edad" HelperText="Edad de la persona">
+                <TextBox Text="{Binding Path=EdadNueva}"/>
+                <inputLayout:SfTextInputLayout.LeadingView>
+                    <Image Source="../assets/cake.png"/>
+                </inputLayout:SfTextInputLayout.LeadingView>
+            </inputLayout:SfTextInputLayout>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top">
-            <TextBlock>Nacionalidad</TextBlock>
             <StackPanel Orientation="Horizontal" Margin="5,0,5,5" HorizontalAlignment="Left">
-                <ComboBox ItemsSource="{Binding Path=Nacionalidades}" SelectedItem="{Binding Path=NacionalidadSeleccionada}"
-                          Width="100" Margin="0,5,5,5"/>
-                <Button Command="{Binding Path=NuevaNacionalidadCommand}" Margin="5" Width="20">+</Button>
+                <inputLayout:SfTextInputLayout Hint="Nacionalidad" HelperText="Nacionalidad de la persona" Width="175">
+                    <ComboBox ItemsSource="{Binding Path=Nacionalidades}"
+                              SelectedItem="{Binding Path=NacionalidadSeleccionada}" Width="100" Margin="0,5,5,5"/>
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Image Source="../assets/world.png"/>
+                    </inputLayout:SfTextInputLayout.LeadingView>
+                </inputLayout:SfTextInputLayout>
+                <Button Command="{Binding Path=NuevaNacionalidadCommand}" Margin="5" Width="30" Height="30">+</Button>
             </StackPanel>
         </StackPanel>
         <Button Command="{Binding Path=AñadirPersonaCommand}" DockPanel.Dock="Top" Width="150">Aceptar</Button>

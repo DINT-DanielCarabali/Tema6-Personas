@@ -3,11 +3,14 @@ using CommunityToolkit.Mvvm.Messaging;
 using System.Collections.ObjectModel;
 using Tema6_Personas.mensajes;
 using Tema6_Personas.modelos;
+using Tema6_Personas.servicios;
 
 namespace Tema6_Personas.vistas_modelo
 {
     public class ListadoPersonasVM : ObservableObject
     {
+        private readonly PersonasService servicioPersonas;
+
         private ObservableCollection<Persona> personas;
         public ObservableCollection<Persona> Personas
         {
@@ -24,12 +27,9 @@ namespace Tema6_Personas.vistas_modelo
 
         public ListadoPersonasVM()
         {
-            Personas = new ObservableCollection<Persona>
-            {
-                new Persona("Pietro", 30, "Italiana"),
-                new Persona("Julia", 25, "Española"),
-                new Persona("Sophie", 35, "Francesa")
-            };
+            servicioPersonas = new PersonasService();
+
+            Personas = servicioPersonas.GetSamples();
 
             WeakReferenceMessenger.Default.Register<NuevaPersonaValueChangedMessage>(
                 this,

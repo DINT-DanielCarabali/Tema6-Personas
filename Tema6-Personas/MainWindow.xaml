@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tema6_Personas"
+        xmlns:properties="clr-namespace:Tema6_Personas.Properties"
         mc:Ignorable="d"
         Title="Personas"
         Height="450" Width="800"
@@ -19,7 +20,11 @@
             <Button Command="{Binding Path=AbrirUCListadoPersonasCommand}" Margin="5,10,5,5">Listado de personas</Button>
             <Button Command="{Binding Path=AbrirUCConsultaPersonaCommand}" Margin="5,10,10,5">Consulta persona</Button>
         </StackPanel>
-        <Border BorderBrush="Black" BorderThickness="2" Margin="10,5,10,10">
+        <TextBlock DockPanel.Dock="Bottom" Margin="10,5,10,10">
+            <Run Text="Versión: "/>
+            <Run Text="{Binding Source={x:Static properties:Settings.Default}, Path=version, Mode=OneWay}"/>
+        </TextBlock>
+        <Border BorderBrush="Black" BorderThickness="2" Margin="10,5,10,5">
             <ContentControl Content="{Binding Path=ContenidoVentana}"/>
         </Border>
     </DockPanel>
